@@ -1,0 +1,53 @@
+# ---------------------------------- Cluster -----------------------------------
+cluster.name: "docker-cluster"
+node.name: "node-1"
+
+# ---------------------------------- Network -----------------------------------
+# Network settings
+network.host: 0.0.0.0
+http.port: 9200
+
+# ----------------------------------- Paths ------------------------------------
+# Paths to store data and logs
+path.data: /usr/share/elasticsearch/data
+path.logs: /usr/share/elasticsearch/logs
+
+# ----------------------------- Discovery and Cluster -------------------------
+# Required for running Elasticsearch in development mode as a single-node cluster
+discovery.type: single-node
+
+# --------------------------------- X-Pack Security ----------------------------
+# Security settings (enable authentication)
+http.cors.enabled: true
+http.cors.allow-origin: "*"
+xpack.security.enabled: true
+http.cors.allow-credentials: true
+http.cors.allow-headers: Authorization, Content-type
+
+# Enabling TLS for HTTP (optional, but recommended for production environments)
+# This section is optional unless you want to set up TLS encryption.
+# xpack.security.http.ssl.enabled: true
+# xpack.security.http.ssl.keystore.path: /path/to/keystore.p12
+# xpack.security.http.ssl.truststore.path: /path/to/truststore.p12
+
+# TLS for internal communication (also optional unless using a multi-node cluster)
+# xpack.security.transport.ssl.enabled: true
+# xpack.security.transport.ssl.keystore.path: /path/to/keystore.p12
+# xpack.security.transport.ssl.truststore.path: /path/to/truststore.p12
+
+# ---------------------------------- Licensing ---------------------------------
+# Enable features based on the license (basic, trial, etc.)
+xpack.license.self_generated.type: basic
+
+# --------------------------------- Monitoring ---------------------------------
+# Enable or disable monitoring features if necessary
+xpack.monitoring.collection.enabled: true
+
+# ------------------------------ Performance Tuning ----------------------------
+# Set the heap size for JVM (you can adjust it based on available resources)
+# The default size is 1GB. Increase it to improve performance on larger machines.
+# It can also be passed via environment variables using ES_JAVA_OPTS.
+# Example: ES_JAVA_OPTS="-Xms2g -Xmx2g"
+# If you are using the environment variable, leave this commented out.
+# jvm.options
+
