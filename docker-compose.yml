@@ -30,11 +30,4 @@ services:
 
 version: '3'
 volumes:
-  data-odoo:
-  usr_src_app_log:
-  usr_src_app_tmp:
-  usr_src_app_public_sites:
-  usr_src_app_public_uploaded:
-  mongodb:
-  pgdb:
   esdata:
