@@ -27,6 +27,7 @@ services:
       - "9300:9300"
     cap_add:
       - IPC_LOCK  # Add this to enable memory locking
+    restart: always
 
 version: '3'
 volumes:
